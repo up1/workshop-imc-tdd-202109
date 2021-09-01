@@ -11,7 +11,9 @@ public class MyRange {
     }
 
     public int getStartNumber() {
-        return Integer.parseInt(this.input.charAt(1) + "");
+        if(startWithInclude())
+            return Integer.parseInt(this.input.charAt(1) + "");
+        return Integer.parseInt(this.input.charAt(1) + "") + 1;
 //        return this.input.charAt(1) - ASCII_CODE_OF_ONE;
     }
 }

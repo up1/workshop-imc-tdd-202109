@@ -38,4 +38,14 @@ public class MyRangeTest {
         assertEquals(1, actualResult);
     }
 
+    @Test
+    @DisplayName("Start number with exclude (1,5] => 2")
+    public void case04() {
+        // Arrange
+        MyRange myRange = new MyRange("(1,5]");
+        // Act
+        int actualResult = myRange.getStartNumber();
+        // Assert
+        assertEquals(2, actualResult);
+    }
 }
