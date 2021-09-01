@@ -48,4 +48,15 @@ public class MyRangeTest {
         // Assert
         assertEquals(2, actualResult);
     }
+
+    @Test
+    @DisplayName("[1,5] => 12345")
+    public void case05() {
+        // Arrange
+        MyRange myRange = new MyRange("[1,5]");
+        // Act
+        String actualResult = myRange.getResult();
+        // Assert
+        assertEquals("12345", actualResult);
+    }
 }
