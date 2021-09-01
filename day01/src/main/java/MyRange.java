@@ -26,4 +26,9 @@ public class MyRange {
         }
         return result.toString();
     }
+
+    public void validateInput() {
+        // TODO
+        throw new RuntimeException("Invalid input");
+    }
 }
