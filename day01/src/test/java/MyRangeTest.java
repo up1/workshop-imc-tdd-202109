@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MyRangeTest {
 
@@ -27,4 +26,16 @@ public class MyRangeTest {
         // Assert
         assertFalse(expectedResult);
     }
+
+    @Test
+    @DisplayName("Start number with include [1,5] => 1")
+    public void case03() {
+        // Arrange
+        MyRange myRange = new MyRange("[1,5]");
+        // Act
+        int actualResult = myRange.getStartNumber();
+        // Assert
+        assertEquals(1, actualResult);
+    }
+
 }
