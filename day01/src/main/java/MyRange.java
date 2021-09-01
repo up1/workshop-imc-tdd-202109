@@ -8,4 +8,5 @@ public class MyRange {
     public boolean startWithInclude() {
         return this.input.startsWith("[");
     }
+
 }
