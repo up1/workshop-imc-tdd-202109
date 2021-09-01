@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RegisterBusinessTest {
+public class RegisterBusinessFailureTest {
 
     @Test
     @DisplayName("Throw exception with First name is required.")
