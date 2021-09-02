@@ -17,7 +17,8 @@ public class PostGateway {
     public Optional<PostResponse> getPostById(int id) {
         String url = "https://jsonplaceholder.typicode.com/posts/" + id;
         try {
-            PostResponse response = restTemplate.getForObject(url, PostResponse.class);
+            PostResponse response =
+                    restTemplate.getForObject(url, PostResponse.class);
             return Optional.ofNullable(response);
         }catch (RestClientException e) {
             return Optional.empty();
