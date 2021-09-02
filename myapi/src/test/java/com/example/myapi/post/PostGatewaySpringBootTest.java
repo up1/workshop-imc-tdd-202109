@@ -21,6 +21,7 @@ public class PostGatewaySpringBootTest {
         // Assert
         assertTrue(result.isPresent());
         assertEquals(1, result.get().getId());
-        assertEquals("sunt aut facere repellat provident occaecati excepturi optio reprehenderit", result.get().getTitle());
+        assertEquals("mock title", result.get().getTitle());
+        assertEquals("mock body", result.get().getBody());
     }
 }
