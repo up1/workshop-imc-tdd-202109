@@ -14,8 +14,17 @@ public class ProductControllerSpringBootTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    @Autowired
+    private ProductRepository productRepository;
+
     @Test
     public void getProductDetail() {
+        // Arrange
+        Product newProduct = new Product();
+        newProduct.setName("พัดลม");
+        newProduct.setPrice(1200);
+        productRepository.save(newProduct);
+
         // 2. Call to /products/1
         ProductResponse productResponse
                 = restTemplate.getForObject("/products/1", ProductResponse.class);
