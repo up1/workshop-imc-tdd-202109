@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import javax.persistence.EntityNotFoundException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
@@ -27,6 +29,17 @@ public class ProductRepositoryTest {
         assertEquals(1, product1.getId());
         assertEquals("demo name", product1.getName());
         assertEquals(100, product1.getPrice());
+    }
+
+    @Test
+    @DisplayName("ค้นหาข้อมูลไม่พบ id = 1")
+    public void case2() {
+        // Act
+        Exception exception = assertThrows(EntityNotFoundException.class, () -> {
+            Product product = productRepository.getById(1);
+            product.getName();
+        });
+        assertEquals("Unable to find com.example.myapi.product.Product with id 1", exception.getMessage());
     }
 
 }
