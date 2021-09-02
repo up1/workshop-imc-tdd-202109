@@ -14,15 +14,15 @@ import java.util.Arrays;
 @SpringBootApplication
 public class MyapiApplication {
 
-	@Autowired ProductRepository productRepository;
-
-	@PostConstruct
-	public void initialData() {
-		Product newProduct = new Product();
-		newProduct.setName("พัดลม");
-		newProduct.setPrice(1200);
-		productRepository.save(newProduct);
-	}
+//	@Autowired ProductRepository productRepository;
+//
+//	@PostConstruct
+//	public void initialData() {
+//		Product newProduct = new Product();
+//		newProduct.setName("พัดลม");
+//		newProduct.setPrice(1200);
+//		productRepository.save(newProduct);
+//	}
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(MyapiApplication.class, args);
