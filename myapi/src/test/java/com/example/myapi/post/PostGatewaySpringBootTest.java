@@ -20,5 +20,7 @@ public class PostGatewaySpringBootTest {
         Optional<PostResponse> result = postGateway.getPostById(1);
         // Assert
         assertTrue(result.isPresent());
+        assertEquals(1, result.get().getId());
+        assertEquals("sunt aut facere repellat provident occaecati excepturi optio reprehenderit", result.get().getTitle());
     }
 }
