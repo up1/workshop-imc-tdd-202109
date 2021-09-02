@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ProductResponse{
 
-
 	@JsonProperty("id")
 	private int id;
 

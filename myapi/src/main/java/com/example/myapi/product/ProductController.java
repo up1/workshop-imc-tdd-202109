@@ -9,7 +9,11 @@ public class ProductController {
 
     @GetMapping("/products/{id}")
     public ProductResponse getProductDetail(@PathVariable String id) {
-        return new ProductResponse();
+        ProductResponse productResponse = new ProductResponse();
+        productResponse.setId(Integer.parseInt(id));
+        productResponse.setProductName("พัดลม");
+        productResponse.setPrice(1200);
+        return productResponse;
     }
 
 }
