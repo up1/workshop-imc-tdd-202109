@@ -4,14 +4,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ProductResponse{
 
-	@JsonProperty("price")
-	private int price;
 
 	@JsonProperty("id")
 	private int id;
 
 	@JsonProperty("product_name")
 	private String productName;
+
+	@JsonProperty("price")
+	private int price;
 
 	public void setPrice(int price){
 		this.price = price;
