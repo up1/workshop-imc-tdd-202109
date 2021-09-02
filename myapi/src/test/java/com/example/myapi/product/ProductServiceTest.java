@@ -23,6 +23,7 @@ public class ProductServiceTest {
         product.setId(1);
         product.setName("Test with mockito");
         when(productRepository.getById(1)).thenReturn(product);
+
         ProductService service = new ProductService(productRepository);
         // Act
         ProductResponse result = service.getById(1);
