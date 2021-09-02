@@ -8,12 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProductController {
 
-    @Autowired
     private ProductService productService;
+
+    @Autowired
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping("/products/{id}")
     public ProductResponse getProductDetail(@PathVariable String id) {
-        ProductResponse productResponse = productService.getById(Integer.parseInt(id));
+        ProductResponse productResponse
+                = productService.getById(Integer.parseInt(id));
         return productResponse;
     }
 
