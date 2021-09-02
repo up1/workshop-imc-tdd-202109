@@ -7,7 +7,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.*;
-
+// 1. Start server
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class ProductControllerSpringBootTest {
 
@@ -23,5 +23,11 @@ public class ProductControllerSpringBootTest {
         assertEquals(1, productResponse.getId());
         assertEquals("พัดลม", productResponse.getProductName());
         assertEquals(1200, productResponse.getPrice());
+
+        ProductResponse expected = new ProductResponse();
+        expected.setId(1);
+        expected.setProductName("พัดลม");
+        expected.setPrice(1200);
+        assertEquals(expected, productResponse);
     }
 }
