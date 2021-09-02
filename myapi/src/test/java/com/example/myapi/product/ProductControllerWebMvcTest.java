@@ -36,7 +36,7 @@ public class ProductControllerWebMvcTest {
         MvcResult result =
                 mvc.perform(get("/products/1")).andExpect(status().isOk())
                         .andReturn();
-        String resultJson = result.getResponse().getContentAsString();
+        byte[] resultJson = result.getResponse().getContentAsByteArray();
         // Convert from string json to java object
         ObjectMapper mapper = new ObjectMapper();
         ProductResponse productResponse =
